@@ -35,12 +35,10 @@ function bulmapress_skip_link_screen_reader_text()
 function bulmapress_menu_toggle()
 {
 	$output = '
-		<button id="menu-toggle" class="button is-clear menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-			<span id="nav-toggle" class="nav-toggle">
-				<span></span>
-				<span></span>
-				<span></span>
-			</span>
+		<button id="menu-toggle" class="navbar-burger" aria-controls="primary-menu" aria-expanded="false">
+			<span></span>
+			<span></span>
+			<span></span>
 		</button>';
 	echo $output;
 }
