@@ -25,18 +25,19 @@
 	<div id="page" class="site">
 		<?php bulmapress_skip_link_screen_reader_text(); ?>
 		<header id="header" class="hero">
-			<div class="hero-head">
-				<div class="container">
-					<nav id="site-navigation" class="nav main-navigation" role="navigation">
-						<div class="nav-left">
-							<?php bulmapress_home_link('nav-item is-brand'); ?>
-							<?php bulmapress_blog_description('nav-item is-muted'); ?>
-						</div>
-						<?php bulmapress_menu_toggle(); ?>
-						<?php bulmapress_navigation(); ?>
-					</nav><!-- #site-navigation -->
-				</div><!-- .container -->
-			</div><!-- .hero-head -->
-		</header><!-- .hero -->
+			<nav id="site-navigation" class="navbar" role="navigation">
+				<div class="navbar-brand">
+					<?php bulmapress_home_link('nav-item is-brand'); ?>
+					<?php bulmapress_blog_description('nav-item is-muted'); ?>
+					<?php bulmapress_menu_toggle(); ?>
+				</div>
+				<div class="navbar-menu">
+					<div class="navbar-start"></div>
+					<?php bulmapress_navigation(); ?>
+				</div>
+			</nav>
+		</header>
 
 		<div id="content" class="site-content">
+
+
