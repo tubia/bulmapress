@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-clean": "rimraf css",
-    "build-sass": "node-sass --output-style expanded --source-map true bulmapress.sass css/bulmapress.css --watch",
-    "build": "npm run build-clean && npm run build-sass"
+    "build-sass": "node-sass --output-style compressed --source-map true bulmapress.sass css/bulmapress.css",
+    "build-watcher": "node-sass --output-style expanded --source-map true bulmapress.sass css/bulmapress.css --watch",
+    "build": "npm run build-clean && npm run build-sass && npm run clean-up",
+    "clean-up": "rimraf node_modules",
+    "start": "npm install && npm run build-watcher"
   },
   "author": "",
   "license": "ISC",
