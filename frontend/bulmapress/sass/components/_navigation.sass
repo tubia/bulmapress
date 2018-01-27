@@ -1,5 +1,4 @@
-@charset "utf-8"
-
+@charset "utf-8"  
 .main-navigation
   display: flex
   position: relative
@@ -7,7 +6,12 @@
 .main-navigation ul
   display: none
 
-.nav-item
+.navbar-brand 
+  .navbar-item
+    &:hover
+      background: inherit
+
+.navbar-item
   color: $text-light
   &.is-muted
     color: #333
@@ -18,6 +22,7 @@
 
   &:hover
     color: $link-hover
+    background: inherit
   // Modifiers
   &.is-active
     color: $link-active
@@ -59,9 +64,15 @@
     &.dropdown-menu
       display: none
       position: absolute
-      top: $nav-height - 10px
+      top: $navbar-height
       right: 0
 
 // Hide second level & up navigation until implemented properly
 .dropdown-menu
   display: none !important
+
+.navbar-menu
+  &.is-active
+    position: absolute
+    width: 100%
+    z-index: 200 

@@ -63,7 +63,7 @@ class bulmapress_navwalker extends Walker_Nav_Menu {
 			$class_names = $value = '';
 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-			$classes[] = 'nav-item is-tab menu-item-' . $item->ID;
+			$classes[] = 'navbar-item is-tab menu-item-' . $item->ID;
 
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
