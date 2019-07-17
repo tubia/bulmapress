@@ -12,7 +12,7 @@ if ( ! function_exists( 'bulmapress_custom_query' ) ) {
 		$post_type = $args['post_type'] ? $args['post_type'] : 'post';
 		$post_class = $args['post_class'] ? $args['post_class'] : 'posts';
 		$post_category_slug = $args['post_category_slug'] ? $args['post_category_slug'] : null;
-		$section_title = $args['section_title'] ? $args['section_title'] : null;
+		$section_title = $args['section_title'] ? $args['section_title'] : 'Recent Posts';
 		$section_columns = $args['section_columns'] ? $args['section_columns'] : 3;
 		$section_max_posts = $args['section_max_posts'] ? $args['section_max_posts'] : 3;
 		$section_button_text = $args['section_button_text'] ? $args['section_button_text'] : 'See all Posts';
@@ -61,8 +61,8 @@ if ( ! function_exists( 'bulmapress_custom_query' ) ) {
 		if ( $the_query->have_posts() ) {
 			$output.= '<div class="section">';
 				$output.= '<div class="container">';
-					$output.= $section_title ? '<h3 class="title has-text-weight-light has-text-centered">'.ucwords($section_title).'</h3>' : '';
-					// $output.= '<div class="spacer"></div>';
+					$output.= '<h2 class="title is-2 has-text-centered">'.ucwords($section_title).'</h2>';
+					$output.= '<div class="spacer"></div>';
 					$output.= '<div class="columns is-multiline">';
 						while ( $the_query->have_posts() ) : $the_query->the_post();
 							$output.= '<div class="column '.$section_columns.'">';
@@ -73,7 +73,7 @@ if ( ! function_exists( 'bulmapress_custom_query' ) ) {
 										$ob_thumbnail = ob_get_contents();
 										ob_end_clean();
 										$output.= '<div class="card-image">';
-											$output.= '<figure class="image is-2by1">';
+											$output.= '<figure class="image is-4by3">';
 												$output.= $ob_thumbnail;
 											$output.= '</figure>';
 										$output.= '</div>';
